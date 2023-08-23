@@ -16,13 +16,12 @@ public class App {
                 HelloWorld beanT =
                 (HelloWorld) applicationContext.getBean("helloworld");
         log.info(beanT.getMessage());
-        String msg = "пары бинов ссылаются на один объект? ";
-        log.info(msg + (beanT == bean));
+        log.info("пары бинов ссылаются на один объект? " + (beanT == bean));
         Cat firstCat = (Cat) applicationContext.getBean("cat");
         log.info(firstCat.getMessage());
         Cat secondCat = (Cat) applicationContext.getBean("cat");
         log.info(secondCat.getMessage());
-        log.info(msg + (firstCat == secondCat));
+        log.info("пары бинов ссылаются на один объект? " + (firstCat == secondCat));
 
     }
 }
