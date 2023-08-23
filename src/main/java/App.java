@@ -22,6 +22,5 @@ public class App {
         Cat secondCat = (Cat) applicationContext.getBean("cat");
         log.info(secondCat.getMessage());
         log.info("пары бинов ссылаются на один объект? " + (firstCat == secondCat));
-
     }
 }
