@@ -4,7 +4,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import java.util.logging.Logger;
 
 public class App {
-    private static Logger log = Logger.getLogger(App.class.getName());
+    private static final Logger log = Logger.getLogger(App.class.getName());
 
     public static void main(String[] args) {
         ApplicationContext applicationContext =
