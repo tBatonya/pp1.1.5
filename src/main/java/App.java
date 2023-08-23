@@ -1,23 +1,28 @@
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.logging.Logger;
+
 public class App {
+    private static Logger log = Logger.getLogger(App.class.getName());
+
     public static void main(String[] args) {
         ApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext(AppConfig.class);
         HelloWorld bean =
                 (HelloWorld) applicationContext.getBean("helloworld");
-        System.out.println(bean.getMessage());
-        HelloWorld beanT =
-                (HelloWorld) applicationContext.getBean("helloworld");
-        System.out.println(beanT.getMessage());
-        System.out.println("пары бинов ссылаются на один объект?" + (beanT == bean));
 
+        log.info(bean.getMessage());
+                HelloWorld beanT =
+                (HelloWorld) applicationContext.getBean("helloworld");
+        log.info(beanT.getMessage());
+        String msg = "пары бинов ссылаются на один объект?";
+        log.info(msg + (beanT == bean));
         Cat firstCat = (Cat) applicationContext.getBean("cat");
-        System.out.println(firstCat.getMessage());
+        log.info(firstCat.getMessage());
         Cat secondCat = (Cat) applicationContext.getBean("cat");
-        System.out.println(secondCat.getMessage());
-        System.out.println("пары бинов ссылаются на один объект?" + (firstCat == secondCat));
+        log.info(secondCat.getMessage());
+        log.info(msg + (firstCat == secondCat));
 
     }
 }
