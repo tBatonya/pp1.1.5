@@ -16,7 +16,7 @@ public class App {
                 HelloWorld beanT =
                 (HelloWorld) applicationContext.getBean("helloworld");
         log.info(beanT.getMessage());
-        String msg = "пары бинов ссылаются на один объект?";
+        String msg = "пары бинов ссылаются на один объект? ";
         log.info(msg + (beanT == bean));
         Cat firstCat = (Cat) applicationContext.getBean("cat");
         log.info(firstCat.getMessage());
